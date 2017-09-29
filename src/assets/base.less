@@ -5,17 +5,12 @@
 // Use box sizing on all the things!
 * {
   box-sizing: border-box;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-touch-callout:none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
 }
 
 // We fix position the body and scroll `.content`.
 body {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   font-family: @font-family-default;
   font-size: @font-size-default;
   line-height: 1.5;
@@ -25,32 +20,21 @@ body {
 }
 
 a, input, textarea, select, button {
-    outline: 0;
+  outline: 0;
 }
 
 p {
-    margin: 1em 0;
+  margin: 1em 0;
 }
 
 // Universal link styling
 a {
   color: @color-link;
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0,0,0,0); // Removes the dark touch outlines on links in webkit browsers.
 
   &:active {
     color: @color-link-active;
   }
-}
-
-.page {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: @color-bg;
-  z-index: 2000;
 }
 
 // Wrapper to be used around all content not in .bar-title and .bar-tab
@@ -75,6 +59,7 @@ a {
 .bar-nav ~ .content {
   top: @bar-base-height;
 }
+
 .bar-header-secondary ~ .content {
   top: (@bar-base-height*2);
 }
@@ -83,6 +68,7 @@ a {
 .bar-footer ~ .content {
   bottom: @bar-base-height;
 }
+
 .bar-footer-secondary ~ .content {
   bottom: (@bar-base-height*2);
 }
@@ -91,23 +77,28 @@ a {
 .bar-tab ~ .content {
   bottom: @bar-tab-height;
 }
+
 .bar-footer-secondary-tab ~ .content {
-  bottom: (@bar-tab-height+@bar-base-height);
+  bottom: (@bar-tab-height + @bar-base-height);
 }
 
 // Utility classes
 .content-padded {
   margin: @bar-side-spacing;
 }
+
 .text-center {
   text-align: center;
 }
+
 .pull-left {
   float: left;
 }
+
 .pull-right {
   float: right;
 }
+
 .clearfix {
   .clearfix();
 }

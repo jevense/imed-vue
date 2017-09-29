@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    drawerShow: false
+    drawerShow: false,
+    apiUrl: 'http://192.168.8.144:8080'
   },
   mutations: {
     changeDrawer (state, after) {

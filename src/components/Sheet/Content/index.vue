@@ -61,7 +61,7 @@
       }
     },
     created () {
-      this.$http.get('http://192.168.8.144:8080/imed/book.json').then(response => {
+      this.$http.get(`${this.$store.state['apiUrl']}/imed/book.json`).then(response => {
         this.books = this.books.concat(response.body['books'])
       }, response => {
         console.log('error')
