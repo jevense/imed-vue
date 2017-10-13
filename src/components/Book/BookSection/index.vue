@@ -26,6 +26,7 @@
   import BookSection from './BookContext/Section'
   import BookLearning from './BookContext/Learning'
   import VuePullRefresh from 'vue-pull-refresh'
+  import BookMagazine from './BookMagazine'
 
   export default {
     name: 'book-section',
@@ -76,6 +77,7 @@
       'imed-index': BookSection,
       'vue-pull-refresh': VuePullRefresh,
       'imed-learning': BookLearning,
+      'imed-magazine': BookMagazine,
       'imed-imprint': BookImprint
     }
   }
