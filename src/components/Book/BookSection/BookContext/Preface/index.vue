@@ -3,12 +3,16 @@
     <img :src="section['topImage']"/>
     <h3 v-text="section['name']"></h3>
     <section>
-      <p v-for="item in section['section']" v-text="item['text']"></p>
+      <template v-for="item in section['section']">
+        <book-paragraph :item="item"></book-paragraph>
+      </template>
     </section>
   </div>
 </template>
 
 <script>
+  import BookParagraph from '../../BookComponent/BookParagraph'
+
   export default {
     name: 'imed-preface',
     props: ['section'],
@@ -21,6 +25,9 @@
       defaultName (name = '') {
         return !name ? '' : name
       }
+    },
+    components: {
+      BookParagraph
     }
   }
 </script>
@@ -29,16 +36,17 @@
   img {
     width: 100%;
   }
-  h3{
+
+  h3 {
     position: absolute;
     top: 2em;
   }
 
-  section{
+  section {
     padding: .5em;
   }
 
-  section p{
+  section p {
     text-indent: 2em;
   }
 </style>

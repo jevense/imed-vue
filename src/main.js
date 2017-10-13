@@ -7,7 +7,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 // import MathJax from 'mathjax'
+// import Navigation from 'vue-navigation'
 
+// Vue.use(Navigation, {router})
 Vue.use(VueTap)
 Vue.use(Resource)
 Vue.config.productionTip = false

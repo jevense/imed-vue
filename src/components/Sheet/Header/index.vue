@@ -4,8 +4,8 @@
       <a class="icon icon-me" v-tap.prevent="{methods : showLeftPanel}"></a>
     </div>
     <div class="buttons-row bar-center">
-      <a href="#" :class="{button:true,active: isActive }" @click.prevent="switchContent('local')">本地书架</a>
-      <a href="#" :class="{button:true,active: !isActive }" @click.prevent="switchContent('get')">已获得图书</a>
+      <a href="#" :class="{button:true, active: isActive }" @click.prevent="switchContent('local-sheet')">本地书架</a>
+      <a href="#" :class="{button:true, active: !isActive }" @click.prevent="switchContent('book-sheet')">已获得图书</a>
     </div>
     <div class="bar-end">
       <router-link v-if="!isActive" class="icon icon-search" to="/sheetHome/search"></router-link>
@@ -19,12 +19,12 @@
     name: 'sheet-header',
     data () {
       return {
-        isActive: true
+        isActive: this.$store.state['tabId'] === 'local-sheet'
       }
     },
     methods: {
       switchContent (status) {
-        this.$emit('switch-content', status)
+        this.$store.commit('switchContent', status)
         this.isActive = !this.isActive
       },
       showLeftPanel () {

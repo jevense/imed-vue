@@ -7,7 +7,7 @@
       </a>
     </header>
     <!--<vue-pull-refresh :on-refresh="onRefresh">-->
-      <div :is="template" :section="section"></div>
+    <div :is="template" :section="section"></div>
     <!--</vue-pull-refresh>-->
   </div>
 </template>
@@ -24,6 +24,7 @@
   import BookPreface from './BookContext/Preface'
   import BookMainPoint from './BookContext/MainPoint'
   import BookSection from './BookContext/Section'
+  import BookLearning from './BookContext/Learning'
   import VuePullRefresh from 'vue-pull-refresh'
 
   export default {
@@ -39,7 +40,7 @@
       }
     },
     created () {
-      let url = `http://192.168.8.144:8080/imed/book/2/chapter/126/section/${this.$route.params.id}.json`
+      let url = `${this.$store.state['apiUrl']}/imed/book/1/chapter/1/section/${this.$route.params.id}.json`
       this.$http.get(url).then(response => {
         this.section = response.body['section']
         this.template = 'imed-' + this.section['template']
@@ -74,6 +75,7 @@
       'imed-main-point': BookMainPoint,
       'imed-index': BookSection,
       'vue-pull-refresh': VuePullRefresh,
+      'imed-learning': BookLearning,
       'imed-imprint': BookImprint
     }
   }

@@ -6,11 +6,15 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     drawerShow: false,
+    tabId: 'local-sheet',
     apiUrl: 'http://192.168.8.144:8080'
   },
   mutations: {
     changeDrawer (state, after) {
       state.drawerShow = after
+    },
+    switchContent (state, after) {
+      state.tabId = after
     }
   }
 })

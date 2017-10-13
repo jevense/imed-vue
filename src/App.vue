@@ -1,11 +1,13 @@
 <template>
+  <!--<navigation>-->
   <!--<transition :name="transitionName">-->
   <router-view></router-view>
   <!--</transition>-->
+  <!--</navigation>-->
 </template>
 
 <script>
-//  import 'normalize.css'
+  import 'normalize.css'
 
   export default {
     name: 'app',
