@@ -1,5 +1,5 @@
 <template>
-  <main class="content">
+  <main class="content" @click="scroll">
     <header :style="{'background-image': `url('${section['topImage']}')`}">
       <h1>
         <span v-text="section['sectionId']"></span>
@@ -34,9 +34,14 @@
         msg: 'Welcome to Your Vue.js App'
       }
     },
+    created: function () {
+//      console.log(this.pageable)
+    },
     methods: {
       defaultName (name = '') {
         return !name ? '' : name
+      },
+      scroll () {
       }
     },
     components: {

@@ -41,12 +41,14 @@
       }
     },
     created () {
+      this.template = 'imed-magazine'
       let url = `${this.$store.state['apiUrl']}/imed/book/1/chapter/1/section/${this.$route.params.id}.json`
       this.$http.get(url).then(response => {
         this.section = response.body['section']
         this.template = 'imed-' + this.section['template']
       }, response => {
         console.log('error')
+        this.template = 'imed-magazine'
       })
     },
     methods: {
@@ -86,4 +88,5 @@
 </script>
 
 <style scoped>
+
 </style>
