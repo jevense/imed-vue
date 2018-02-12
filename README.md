@@ -1,4 +1,4 @@
-# imed-pre-vue
+# imed-reader
 
 > A Vue.js project
 
