@@ -30,7 +30,7 @@
       }
     },
     created () {
-      let url = `${this.$store.state['apiUrl']}/imed/book/${this.$route.params.id}/chapter.json`
+      let url = `${this.$store.state['apiUrl']}/book/${this.$route.params.id}/chapter.json`
       this.$http.get(url).then(response => {
         this.chapters = response.body['chapters']['chapters']
       }, () => {

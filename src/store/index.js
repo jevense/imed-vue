@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     drawerShow: false,
     tabId: 'local-sheet',
-    apiUrl: 'http://192.168.8.144:8080'
+    apiUrl: 'http://192.168.8.144:8080/imed'
+    // apiUrl: 'http://47.94.206.185:2020',
   },
   mutations: {
     changeDrawer (state, after) {
@@ -15,6 +16,6 @@ export default new Vuex.Store({
     },
     switchContent (state, after) {
       state.tabId = after
-    }
+    },
   }
 })

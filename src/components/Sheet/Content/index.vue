@@ -1,6 +1,6 @@
 <template>
   <div>
-    <sheet-header></sheet-header>
+    <sheet-header />
     <!--Sheet/Content-->
     <div :is="this.$store.state['tabId']" :books="books"></div>
   </div>
@@ -19,7 +19,7 @@
       }
     },
     created () {
-      this.$http.get(`${this.$store.state['apiUrl']}/imed/book.json`).then(response => {
+      this.$http.get(`${this.$store.state['apiUrl']}/book.json`).then(response => {
         this.books = this.books.concat(response.body['books'])
       }, () => {
         console.log('error')

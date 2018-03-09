@@ -1,11 +1,11 @@
 <template>
   <drawer :show="this.$store.state['drawerShow']" @change-show="changedShow">
     <!--PanelLeft-->
-    <panel-left slot="drawer" @change-show="changedShow"></panel-left>
+    <panel-left slot="drawer" @change-show="changedShow" />
     <!--Sheet/Header-->
-    <sheet-content></sheet-content>
+    <sheet-content />
     <!--MainNavigator-->
-    <main-navigator></main-navigator>
+    <main-navigator />
   </drawer>
 </template>
 

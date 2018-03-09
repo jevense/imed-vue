@@ -4,16 +4,21 @@ import Sheet from '../components/Sheet'
 import Search from '../components/Sheet/Search'
 import Person from '../components/Person'
 import BookCategory from '../components/Book/BookCategory'
-import BookSection from '../components/Book/BookSection'
+import BookSection from '../components/Book/BookContent'
 import Test from '../Test.vue'
 
 Vue.use(Router)
+
+let homePage = localStorage.getItem('@native')
+if (!homePage) {
+  homePage = 'sheetHome'
+}
 
 export default new Router({
   routes: [
     {
       path: '/',
-      redirect: 'sheetHome'
+      redirect: homePage
     },
     {
       path: '/sheetHome',
